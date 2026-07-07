@@ -1,156 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Web Pertama Andrew</title>
+    <title>Galeri Foto - Web Andrew</title>
     <style>
-        /* Gaya dasar halaman */
         body {
-            background-color: #E0F2FE;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            overflow: hidden; /* Supaya nggak bisa scroll sebelum dibuka */
-        }
-
-        /* Gaya Halaman Pembuka (Overlay) */
-        #welcome-screen {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background-color: #E0F2FE;
-            display: flex;
-            justify-content: center; /* Selesai diperbaiki: ditambah titik koma */
-            align-items: center;
-            flex-direction: column;
-            z-index: 9999;
-            transition: opacity 1s ease;
+            background-color: #FFF1F2; /* Warna pink soft biar beda dari halaman utama */
+            font-family: 'Segoe UI', sans-serif;
             text-align: center;
+            padding: 50px;
         }
-
-        /* Animasi Karakter Beruang Bunga Melompat */
-        .karakter-lucu {
-            font-size: 100px;
-            margin-bottom: 20px;
+        .btn-kembali {
             display: inline-block;
-            animation: lompat 0.6s infinite alternate ease-in-out;
-        }
-
-        @keyframes lompat {
-            from { transform: translateY(0); }
-            to { transform: translateY(-30px); }
-        }
-
-        /* Tombol Buka */
-        .btn-buka {
-            background-color: #3b82f6;
+            background-color: #f43f5e;
             color: white;
-            border: none;
-            padding: 15px 35px;
-            font-size: 18px;
-            border-radius: 30px;
-            cursor: pointer;
-            font-weight: bold;
-            box-shadow: 0px 4px 15px rgba(0,0,0,0.2);
-            transition: 0.3s;
-        }
-        .btn-buka:hover {
-            transform: scale(1.1);
-            background-color: #2563eb;
-        }
-
-        /* SUSUNAN KONTEN UTAMA (Membagi Kiri & Kanan) */
-        #main-content {
-            max-width: 1100px;
-            margin: 60px auto 0 auto;
-            opacity: 0;
-            transition: opacity 2s ease;
-            display: flex;          /* Membuat konten berjejer ke samping */
-            justify-content: center;
-            align-items: center;
-            gap: 60px;              /* Jarak tengah antara info dan video */
-            padding: 20px;
-        }
-
-        /* Desain Kolom Kiri (Profil Andrew) */
-        .kolom-kiri {
-            flex: 1;
-            text-align: center;
-        }
-
-        /* Desain Kolom Kanan (Video Kebersamaan) */
-        .kolom-kanan {
-            flex: 1;
-            text-align: center;
-        }
-
-        /* Bingkai Foto Bulat */
-        .foto-profil {
-            width: 230px;
-            height: 230px;
-            object-fit: cover;
-            border-radius: 50%;
-            border: 5px solid white;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
-        /* Bingkai Video Kotak Estetik */
-        .video-kita {
-            width: 100%;
-            max-width: 450px;
+            padding: 10px 20px;
+            text-decoration: none; /* Menghilangkan garis bawah tulisan */
             border-radius: 20px;
-            border: 5px solid white;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            font-weight: bold;
+            margin-top: 30px;
         }
     </style>
 </head>
 <body>
 
-    <div id="welcome-screen">
-        <div class="karakter-lucu">🐻💐</div>
-        <h2 style="color: #374151; margin-bottom: 25px;">I have something for you...</h2>
-        <button class="btn-buka" onclick="bukaWeb()">Klik untuk Buka ✨</button>
-    </div>
+    <h1>Selamat Datang di Galeri Momen 📸</h1>
+    <p>Ini adalah halaman kedua dari website Andrew.</p>
 
-    <div id="main-content">
-        
-        <div class="kolom-kiri">
-            <h1 style="color: blue; margin-top: 0;">Sissy Fikky</h1>
-            <p style="color: #374151; font-size: 18px;">I made for you.</p>
-            
-            <img src="foto-andrew.jpg" onerror="this.src='foto-andrew.JPG';" class="foto-profil">
-            
-            <br><br>
-            <audio id="myAudio" src="lagu-kita.mp3" loop controls style="width: 250px; border-radius: 10px;"></audio>
-        </div>
-
-        <div class="kolom-kanan">
-            <h3 style="color: #1e3a8a; margin-top: 0; margin-bottom: 15px;">Our Moments ❤️</h3>
-            <video id="myVideo" src="video-kita.mp4" loop controls class="video-kita"></video>
-        </div>
-
-    </div>
-
-    <script>
-        function bukaWeb() {
-            // Putar lagu lokal
-            var audio = document.getElementById("myAudio");
-            audio.play();
-
-            // Putar video lokal otomatis
-            var video = document.getElementById("myVideo");
-            video.play();
-
-            // Hilangkan halaman pembuka
-            var screen = document.getElementById("welcome-screen");
-            screen.style.opacity = "0";
-            
-            // Munculkan semua konten berdampingan
-            document.getElementById("main-content").style.opacity = "1";
-            document.body.style.overflow = "auto";
-
-            setTimeout(function() {
-                screen.style.display = "none";
-            }, 1000);
-        }
-    </script>
+    <a href="index.html" class="btn-kembali">⬅️ Kembali ke Home</a>
 
 </body>
 </html>
